@@ -19,3 +19,16 @@ def pe():
             print('GG')
             cur.execute(f'INSERT INTO productss (name, price, number) VALUES ("{n0}" , "{n1}" , "{n2}")')
             connection.commit()
+      if na =='2':
+            no = input('Enter row id')
+            cur.execute(f'DELETE FROM productss WHERE rowid = {no}')
+            connection.commit()
+      if na == '0':
+            print(res)
+
+cur.execute('SELECT rowid, name, price, number FROM productss')
+connection.commit()
+res = cur.fetchall()
+pe()
+
+connection.close()
